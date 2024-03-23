@@ -17,10 +17,7 @@
 # Imports python modules
 import argparse
 
-# TODO 1: Define get_input_args function below please be certain to replace None
-#       in the return statement with parser.parse_args() parsed argument 
-#       collection that you created with this function
-# 
+#  Define get_input_args function 
 def get_input_args():
     """
     Retrieves and parses the 3 command line arguments provided by the user when
@@ -39,8 +36,9 @@ def get_input_args():
      parse_args() -data structure that stores the command line arguments object  
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dir', type=str, default='pet_images/', 
-                        help='path to folder of images')
-    parser.add_argument('--arch', default = 'vgg' )
-    parser.add_argument('--dogfile', default = 'dognames.txt' )
+    # add agrument, type, choices and help
+    parser.add_argument('--dir', type=str, default='pet_images/', help='Path to folder of images')
+    parser.add_argument('--arch', type=str, default = 'vgg', help='Pre-trained model to be use', choices=['vgg', 'alexnet', 'resnet'] )
+    parser.add_argument('--dogfile',type=str,  default = 'dognames.txt', help='A text file that contains names of all dogs' )
+    # return agrument
     return parser.parse_args()
