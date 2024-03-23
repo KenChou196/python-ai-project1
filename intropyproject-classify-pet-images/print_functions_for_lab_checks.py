@@ -247,7 +247,9 @@ def check_calculating_results(results_dic, results_stats_dic):
         n_class_cdog = 0
         n_class_cnotd = 0
         n_match_breed = 0
-    
+        pct_corr_dog = 0
+        pct_corr_notdog = 0
+        pct_corr_breed = 0
         # Interates through results_dic dictionary to recompute the statistics
         # outside of the calculates_results_stats() function
         for key in results_dic:

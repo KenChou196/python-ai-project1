@@ -157,7 +157,8 @@ def calculates_results_stats(results_dic):
     # Calculates % correct dogs
     if results_stats_dic['n_dogs_img'] != 0:
         results_stats_dic['pct_correct_dogs'] = results_stats_dic['n_correct_dogs'] / results_stats_dic['n_dogs_img'] * 100
-
+    else:
+        results_stats_dic['pct_correct_dogs'] = 0.0
     # TODO: 5e. REPLACE zero(0.0) with CODE that calculates the % of correctly
     #           classified breeds of dogs. Recall that this can be calculated 
     #           by the number of correctly classified breeds of dog('n_correct_breed') 
@@ -167,7 +168,8 @@ def calculates_results_stats(results_dic):
     # Calculates % correct breed of dog
     if results_stats_dic['n_dogs_img'] != 0:    
         results_stats_dic['pct_correct_breed'] = results_stats_dic['n_correct_breed'] / results_stats_dic['n_dogs_img'] * 100.0
-
+    else:
+        results_stats_dic['pct_correct_breed'] = 0.0
     # Calculates % correct not-a-dog images
     # Uses conditional statement for when no 'not a dog' images were submitted 
     if results_stats_dic['n_notdogs_img'] > 0:

@@ -75,12 +75,11 @@ def print_results(results_dic, results_stats_dic, model,
     #          results_stats_dic
     #
     # print("")
-    print("{:20}: {:3d}".format('N Not A Dog images',results_stats_dic['n_notdogs_img']))
+    print("{:20}: {:3d}".format('N Not-Dog Images',results_stats_dic['n_notdogs_img']))
 
 
     # Prints summary statistics (percentages) on Model Run
-    # print(" ")
-    print("{:20}: {:3d}".format('Summary statistics',results_stats_dic['pct_match']))
+    print(" ")
     for key in results_stats_dic:
         # TODO: 6b. REPLACE pass with CODE that prints out all the percentages 
         #           in the results_stats_dic dictionary. Recall that all 

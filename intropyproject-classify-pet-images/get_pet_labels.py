@@ -18,6 +18,7 @@
 ##
 # Imports python modules
 from os import listdir
+import re
 
 # TODO 2: Define get_pet_labels function below please be certain to replace None
 #       in the return statement with results_dic dictionary that you create 
@@ -54,7 +55,7 @@ def get_pet_labels(image_dir):
        if in_files[idx][0] != ".":
            
            # Creates temporary label variable to hold pet label name extracted 
-           pet_label = ""
+         #   pet_label = ""
 
            # TODO: 2a. BELOW REPLACE pass with CODE that will process each 
            #          filename in the in_files list to extract the dog breed 
@@ -62,7 +63,9 @@ def get_pet_labels(image_dir):
            #          accessed by in_files[idx]. Be certain to place the 
            #          extracted dog breed name in the variable pet_label 
            #          that's created as an empty string ABOVE
-           pass
+           #   pass
+           pet_label = re.sub('[0-9]+[.jJpPgG]+', '', in_files[idx])
+           pet_label = pet_label.replace('_', ' ').lower().rstrip()
 
            # If filename doesn't already exist in dictionary add it and it's
            # pet label - otherwise print an error message because indicates 
